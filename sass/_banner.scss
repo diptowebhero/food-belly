@@ -1,0 +1,62 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 600px;
+  background: url(../images/bannerbackground.png);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+
+  h2 {
+    font-size: 55px;
+    font-weight: 600;
+    color: #374151;
+    text-align: center;
+  }
+  @media #{$tablet} {
+    h2 {
+      font-size: 45px;
+      text-align: center;
+    }
+  }
+  @media #{$mobile} {
+    h2 {
+      font-size: 35px;
+      text-align: center;
+    }
+  }
+  .search-box {
+    width: 400px;
+    border-radius: 30px;
+    background: $white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 6px;
+    margin-top: 15px;
+    @media #{$mobile} {
+        max-width: 300px;
+    }
+    input {
+      border: none;
+      font-size: 16px;
+      font-weight: 400;
+      outline: none;
+      margin-left: 15px;
+    }
+    button {
+      border: none;
+      outline: none;
+      background: $mainColor;
+      color: $white;
+      width: 120px;
+      height: 45px;
+      border-radius: 30px;
+      font-size: 15px;
+      cursor: pointer;
+    }
+  }
+}

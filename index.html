@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Belly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/app.js" defer></script>
+  </head>
+  <body>
+    <!-- header area start -->
+    <header class="header">
+      <div class="inner_header container">
+        <div class="logo">
+          <img src="./images/logo.png" alt="" />
+        </div>
+        <nav id="nav">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li>
+              <span class="material-icons-outlined"> shopping_cart </span>
+            </li>
+          </ul>
+        </nav>
+        <div class="toggler">
+          <span class="material-icons-outlined"> menu </span>
+        </div>
+      </div>
+    </header>
+    <!-- header area end -->
+    <!-- banner area start -->
+    <section>
+      <div class="banner">
+        <h2>Best food waiting for your belly</h2>
+        <div class="search-box">
+          <input type="text" placeholder="search here" />
+          <button id="search_btn">Search</button>
+        </div>
+      </div>
+    </section>
+    <!-- banner area end -->
+    <main>
+      <!-- food displaying area start-->
+      <div class="container">
+        <div class="food_display_container"></div>
+      </div>
+      <!-- food displaying area end-->
+      <!-- modal area start -->
+      <div class="modal">
+        <div class="overlay"></div>
+        <div class="inner_modal">
+          <div class="modal_header">
+            <h4>Food Details</h4>
+            <span id="close_btn" class="material-icons-outlined"> clear </span>
+          </div>
+          <div class="food_detailsA">
+
+          </div>
+        </div>
+      </div>
+      <!-- modal area end -->
+    </main>
+  </body>
+</html>

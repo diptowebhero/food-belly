@@ -1,5 +1,6 @@
 .modal {
   display: none;
+  
   .overlay {
     position: fixed;
     width: 100%;
@@ -16,7 +17,7 @@
     max-width: 400px;
     width: 100%;
     min-height: 350px;
-    
+    border-radius: 6px;
     background: $white;
     color: black;
 
@@ -34,7 +35,13 @@
         cursor: pointer;
         font-size: 25px;
         font-weight: 500;
+        opacity: 0.5;
+        transition: all .3s;
+        &:hover{
+          opacity: 1;
+        }
       }
+      
     }
   }
   .modal-content {

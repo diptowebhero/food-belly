@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet"
     />
+  
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/app.js" defer></script>
   </head>
@@ -27,7 +28,9 @@
             <li><a href="#">Product</a></li>
             <li><a href="#">Pricing</a></li>
             <li>
+              <div class="cart"><span id="totalCart"></span></div>
               <span class="material-icons-outlined"> shopping_cart </span>
+              
             </li>
           </ul>
         </nav>
@@ -44,15 +47,24 @@
         <p id="error">Inter a value in the input</p>
         <div class="search-box">
           <input type="text" placeholder="search here" />
+          
           <button id="search_btn">Search</button>
         </div>
+        <!-- <img src="./images/Ripple-1.3s-200px.gif" class="loader" style="display: none;" alt=""> -->
+        
       </div>
     </section>
     <!-- banner area end -->
     <main>
       <!-- food displaying area start-->
+    
+        <img id="spinner" class="spinner" src="./images/Ripple-1.3s-200px.gif" alt="">
+        
       <div class="container">
-        <div class="food_display_container"></div>
+        <p class="error">Data Not Found,Please Search Valid food name</p>
+        <div class="food_display_container">
+          
+        </div>
       </div>
       <!-- food displaying area end-->
       <!-- modal area start -->
@@ -63,7 +75,9 @@
             <h4>Food Details</h4>
             <span id="close_btn" class="material-icons-outlined"> clear </span>
           </div>
-          <div class="food_detailsA"></div>
+          <div class="food_detailsA">
+            
+          </div>
         </div>
       </div>
       <!-- modal area end -->
@@ -72,5 +86,6 @@
       <p>Copyright © All Reserved by Educafe, 2022</p>
       <p>Made By 🖤 Dipto Das</p>
     </footer>
+    
   </body>
 </html>

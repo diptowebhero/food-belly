@@ -177,15 +177,11 @@ const getAllCategories = async (categories) => {
 const addToCart = (id) => {
   const cart = getDataOnLocalStorage();
   const itemsArray = Object.keys(cart);
+
   console.log(itemsArray);
   const isExist = itemsArray.find((item) => item === id);
-  // isExist ? (cart[id] += 1) : (cart[id] = 1);
-  if(isExist){
-    cart[id] += 1
-  }
-  else{
-    cart[id] = 1;
-  }
+  isExist ? (cart[id] += 1) : (cart[id] = 1);
+  
   totalCart.textContent = itemsArray.length + 1;
   setDataLocalStorage(cart);
 };

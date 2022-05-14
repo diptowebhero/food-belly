@@ -290,7 +290,8 @@ a {
                   transform: scale(1.1); }
 
 .addToCart {
-  width: 100% !important; }
+  width: 100% !important;
+  margin: 0px 10px !important; }
 
 .modal {
   display: none; }

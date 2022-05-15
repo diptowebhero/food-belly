@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/cart.js" defer></script>
+  </head>
+  <body>
+    <!-- header area start -->
+    <header class="header">
+      <div class="inner_header container">
+        <div class="logo">
+          <img src="./images/logo.png" alt="" />
+        </div>
+        <nav id="nav">
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li>
+              <a href="./cart.html"
+                ><div class="cart"><span id="totalCart"></span></div>
+                <span class="material-icons-outlined"> shopping_cart </span></a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="toggler">
+          <span class="material-icons-outlined"> menu </span>
+        </div>
+      </div>
+    </header>
+    <!-- header area end -->
+    <!-- Cart area -->
+    <div class="cart_container">
+      <table class="cart_table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody id="cartItem">
+          <!-- <tr>
+            <td>Chicken</td>
+            <td>
+              <button class="increment"><i class="fas fa-plus"></i></button>
+              <input value="10" type="text" readonly />
+              <button class="decrement">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+            </td>
+            <td><span>200 Taka</span></td>
+          </tr> -->
+        </tbody>
+        
+      </table>
+      <div class="total_price" id="total_price">
+        <table>
+          <tbody>
+            <tr>
+              <td>Subtotal: </td>
+              <td id="subTotal">0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </table>
+      <div class="Purchase_btn">
+        <button id="checkout">Checkout</button>
+      </div>
+    </div>
+    
+  </body>
+</html>

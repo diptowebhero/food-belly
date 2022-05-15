@@ -82,7 +82,10 @@ function close() {
 }
 
 //showing display api data
-window.onload = getCategoryFood;
+window.onload = () => {
+  getCategoryFood();
+  cartLength();
+};
 let categories;
 
 async function getCategoryFood() {
@@ -177,24 +180,34 @@ const getAllCategories = async (categories) => {
 const addToCart = (id) => {
   const cart = getDataOnLocalStorage();
   const itemsArray = Object.keys(cart);
-
   console.log(itemsArray);
+
   const isExist = itemsArray.find((item) => item === id);
-  isExist ? (cart[id] += 1) : (cart[id] = 1);
-  
-  totalCart.textContent = itemsArray.length + 1;
+  if (isExist) {
+    cart[id] += 1;
+  } else {
+    cart[id] = 1;
+    totalCart.textContent = itemsArray.length + 1;
+  }
+
   setDataLocalStorage(cart);
 };
 
+const cartLength = () => {
+  const cart = getDataOnLocalStorage();
+  const itemsArray = Object.keys(cart);
+  totalCart.textContent = itemsArray.length;
+};
+
 // localStorage function
-const getDataOnLocalStorage = () => {
+function getDataOnLocalStorage() {
   let cart = {};
   const data = localStorage.getItem("carts");
   if (data) {
     cart = JSON.parse(data);
   }
   return cart;
-};
+}
 
 const setDataLocalStorage = (data) => {
   localStorage.setItem("carts", JSON.stringify(data));

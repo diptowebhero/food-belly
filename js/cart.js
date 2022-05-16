@@ -22,12 +22,15 @@ const setDataLocalStorage = (data) => {
 
 //Store Array
 let cartItems = [];
+
+//get data
 async function loadFoodItem() {
   const res = await fetch("../data/allCategories.json");
   const data = await res.json();
   getFoodItem(data);
 }
 loadFoodItem();
+
 function getFoodItem({ meals }) {
   const cart = getDataOnLocalStorage();
 
@@ -38,24 +41,89 @@ function getFoodItem({ meals }) {
         food.quantity = cart[id];
         food.subTotal = food.price * food.quantity;
         cartItems.push(food);
-        console.log(cartItems);
       }
     });
   });
-  displayCartData()
+  displayCartData();
 }
-function displayCartData(){
-    cartItems.forEach(({strMeal,subTotal,quantity})=>{
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
+//display cart data
+function displayCartData() {
+  cartItems.forEach(({ strMeal, subTotal, quantity, idMeal, price }) => {
+    const tr = document.createElement("tr");
+    tr.addEventListener("click", function (e) {
+      const tr = this;
+      changeItem(tr, idMeal, e, price);
+    });
+    tr.innerHTML = `
         <td>${strMeal}</td>
             <td>
-                <button class="increment"><i class="fas fa-plus"></i></button>
+                <button id="increment" >+</button>
                 <input value='${quantity}'type="text" readonly>
-                <button class="decrement"><i class="fa-solid fa-minus"></i></button>
+                <button id="decrement">-</button>
             </td>
-            <td><span>${subTotal} Taka</span></td>
-        `
-        cartItemEl.appendChild(tr)
+            <td><span id="subTotalTk">${subTotal}</span> Taka</td>
+            <td id="removeItem"><i id="remove" class="fa-solid fa-xmark"></i></td>
+        `;
+    cartItemEl.appendChild(tr);
+  });
+  getSubTotal();
+}
+
+//total
+function getSubTotal() {
+  let total = 0;
+  cartItems.forEach(({ subTotal }) => {
+    total += subTotal;
+  });
+  document.getElementById("subTotal").innerText = total;
+}
+
+//remove, quantity increment, decrement
+function changeItem(tr, id, e, price) {
+  const input = [...e.target.parentElement.children].find(
+    (el) => el.type === "text"
+  );
+  const cart = getDataOnLocalStorage();
+  if (e.target.id === "remove") {
+    delete cart[id];
+   
+    let newArray = [];
+    cartItems.filter((food) => {
+      if (food.idMeal !== id) {
+        newArray.push(food);
+      }
+    });
+    cartItems = newArray;
+    cartLength();
+    getSubTotal();
+    tr.remove();
+  } else if (e.target.id === "increment") {
+    input.value = Number(input.value) + 1;
+    const subTotal = input.value * price;
+    
+    const sub = tr.querySelector("#subTotalTk");
+    ++cart[id];
+    cartItems.forEach(food=>{
+      if(food.idMeal === id){
+        food.subTotal = subTotal;
+        getSubTotal()
+      }
     })
+    sub.innerText = subTotal;
+  } else if (e.target.id === "decrement") {
+    if (input.value === "1") return;
+    input.value = Number(input.value) - 1;
+    const subTotal = input.value * price;
+    --cart[id]
+    const sub = tr.querySelector("#subTotalTk");
+    sub.innerText = subTotal;
+    --cart[id]
+    cartItems.forEach(food=>{
+      if(food.idMeal === id){
+        food.subTotal = subTotal;
+        getSubTotal()
+      }
+    })
+  }
+  setDataLocalStorage(cart);
 }

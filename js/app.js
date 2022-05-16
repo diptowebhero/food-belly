@@ -180,7 +180,6 @@ const getAllCategories = async (categories) => {
 const addToCart = (id) => {
   const cart = getDataOnLocalStorage();
   const itemsArray = Object.keys(cart);
-  console.log(itemsArray);
 
   const isExist = itemsArray.find((item) => item === id);
   if (isExist) {

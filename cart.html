@@ -33,7 +33,7 @@
             <li><a href="#">Pricing</a></li>
             <li>
               <a href="./cart.html"
-                ><div class="cart"><span id="totalCart"></span></div>
+                ><div class="cart"><span id="totalItems">0</span></div>
                 <span class="material-icons-outlined"> shopping_cart </span></a
               >
             </li>
@@ -51,6 +51,7 @@
         <thead>
           <tr>
             <th>Product</th>
+            <th>Image</th>
             <th>Quantity</th>
             <th>Price</th>
             <th>Remove</th>
@@ -59,7 +60,8 @@
         <tbody id="cartItem">
           <!-- <tr>
             <td>Chicken</td>
-            <td id="Quantity">
+            <td id="cartImg"><img src="../images/dinner1.png"></td>
+            <td id="quantity">
               <button id="increment"><i class="fas fa-plus"></i></button>
               <input value="10" type="text" readonly />
               <button id="decrement">
@@ -76,8 +78,8 @@
         <table>
           <tbody>
             <tr>
-              <td>Subtotal: </td>
-              <td id="subTotal">0</td>
+              <td>Total: </td>
+              <td id="total">0</td>
             </tr>
           </tbody>
         </table>

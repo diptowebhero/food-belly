@@ -2,9 +2,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+ 
   max-width: 1080px;
-  margin: 0px auto;
+  margin: 100px auto 50px auto;
   flex-direction: column;
   .cart_table {
     width: 100%;
@@ -19,7 +19,7 @@
     border: 1px solid #dddddd;
     padding: 8px;
   }
-  #cartItem tr td input {
+  #cartItem  input {
     text-align: center;
     width: 80px;
     height: 30px;
@@ -40,14 +40,12 @@
   background: #dddddd;
   cursor: pointer;
   margin: 0px 5px;
-  i{
-    font-size: 13px;
-  }
+  font-size: 15px;
 }
 
 .total_price,
 table {
-  width: 413px;
+  width: 348px;
   border-top: 1px solid gray;
   margin-left: auto;
 }
@@ -77,10 +75,20 @@ table {
     cursor: pointer;
   }
 }
-#Quantity{
-display: flex;
-align-items: center;
-justify-content: center;
+#Quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 // <i class="fa-solid fa-minus"></i>
 //<i class="fas fa-plus"></i>
+
+#cartImg {
+  width: 90px;
+  height: 90px;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+  }
+}

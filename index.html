@@ -8,20 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-      rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    rel="stylesheet"
     />
-
+    
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/app.js" defer></script>
+    
   </head>
   <body>
     <!-- header area start -->
     <header class="header">
       <div class="inner_header container">
-        <a href="./index.html"><div class="logo">
-          <img src="./images/logo.png" alt="" />
-        </div></a>
+        <a href="./index.html"
+          ><div class="logo">
+            <img src="./images/logo.png" alt="" /></div
+        ></a>
         <nav id="nav">
           <ul>
             <li><a href="#">Home</a></li>
@@ -29,7 +31,7 @@
             <li><a href="#">Pricing</a></li>
             <li>
               <a href="./cart.html"
-                ><div class="cart"><span id="totalCart"></span></div>
+                ><div class="cart"><span id="totalItems"></span></div>
                 <span class="material-icons-outlined"> shopping_cart </span></a
               >
             </li>
@@ -51,11 +53,12 @@
 
           <button id="search_btn">Search</button>
         </div>
-        <!-- <img src="./images/Ripple-1.3s-200px.gif" class="loader" style="display: none;" alt=""> -->
       </div>
     </section>
     <!-- banner area end -->
     <main>
+      <!-- Error message -->
+
       <!-- food displaying area start-->
 
       <img
@@ -66,8 +69,21 @@
       />
 
       <div class="container">
-        <p class="error">Data Not Found,Please Search Valid food name</p>
-        <div class="food_display_container"></div>
+        <div class="food_display_container">
+          <!-- <div class="single_food_card">
+            <div class="food_img">
+              <img src="./images/dinner1.png" alt="" />
+            </div>
+            <div class="food_details">
+              <h3>strMeal</h3>
+              <p>${strInstructions.slice(0, 100)}</p>
+            </div>
+            <div class="food_button">
+              <button id="details_btn">See Category</button>
+              <button id="details_btn" onclick="getDetails('${idMeal}')">See Details</button>
+            </div>
+          </div> -->
+        </div>
       </div>
       <!-- food displaying area end-->
       <!-- modal area start -->
@@ -78,7 +94,15 @@
             <h4>Food Details</h4>
             <span id="close_btn" class="material-icons-outlined"> clear </span>
           </div>
-          <div class="food_detailsA"></div>
+          <div class="food_detailsA">
+            <div class="modal-content">
+              <!-- <div class="food_img">
+                <img src="./images/dinner1.png" alt="">
+              </div>
+              <h4>Chicken</h4>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic unde veniam earum tenetur, delectus rem. Ipsum autem eligendi, hic laborum saepe iusto consequatur cumque culpa tempora iure ad necessitatibus architecto.</p>
+            </div> -->
+          </div>
         </div>
       </div>
       <!-- modal area end -->
@@ -87,5 +111,7 @@
       <p>Copyright © All Reserved by Educafe, 2022</p>
       <p>Made By 🖤 Dipto Das</p>
     </footer>
+    <!-- <script src="./js/cart.js"></script> -->
   </body>
 </html>
+
